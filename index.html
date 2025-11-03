@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidad Exacta - Tu tranquilidad financiera en manos expertas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de colores y tipografía */
+        :root {
+            --azul-oscuro: #0f1c35;
+            --azul-medio: #1e3a5f;
+            --azul-claro: #4299e1;
+            --azul-gradiente: linear-gradient(135deg, #1e3a5f 0%, #0f1c35 100%);
+            --blanco: #ffffff;
+            --gris-claro: #f8fafc;
+            --gris-medio: #e2e8f0;
+            --gris-oscuro: #4a5568;
+            --negro: #2d3748;
+            --verde: #48bb78;
+            --fuente-principal: 'Inter', sans-serif;
+            --sombra: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --sombra-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --transicion: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-principal);
+            color: var(--negro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--azul-oscuro);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gris-oscuro);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--azul-gradiente);
+            color: var(--blanco);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: var(--transicion);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .btn:hover:after {
+            opacity: 1;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--azul-claro);
+            color: var(--azul-claro);
+        }
+
+        .btn-outline:hover {
+            background: var(--azul-claro);
+            color: var(--blanco);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--azul-gradiente);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header y navegación */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transicion);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--azul-claro);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--azul-oscuro);
+            font-weight: 500;
+            transition: var(--transicion);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--azul-claro);
+            transition: var(--transicion);
+        }
+
+        nav ul li a:hover {
+            color: var(--azul-claro);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--gris-medio);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transicion);
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--azul-claro);
+            color: var(--blanco);
+            border-color: var(--azul-claro);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--azul-oscuro);
+        }
+
+        /* Sección Inicio */
+        #inicio {
+            background: linear-gradient(rgba(15, 28, 53, 0.85), rgba(15, 28, 53, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--blanco);
+            text-align: center;
+            padding: 180px 0 120px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #inicio:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(transparent, var(--gris-claro));
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--blanco);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: var(--blanco);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 80px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--blanco);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Sección Servicios */
+        #servicios {
+            background-color: var(--gris-claro);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--blanco);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--azul-gradiente);
+            transition: var(--transicion);
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .service-card:hover:before {
+            height: 100%;
+        }
+
+        .service-card:hover .service-icon,
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: var(--blanco);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--azul-claro);
+            margin-bottom: 25px;
+            transition: var(--transicion);
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+            transition: var(--transicion);
+        }
+
+        .service-card p {
+            transition: var(--transicion);
+        }
+
+        /* Sección Nosotros */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            padding-right: 20px;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra-hover);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transicion);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background: var(--gris-claro);
+            transition: var(--transicion);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra);
+        }
+
+        .value-item i {
+            font-size: 2.5rem;
+            color: var(--azul-claro);
+            margin-bottom: 20px;
+        }
+
+        /* Sección Clientes */
+        #clientes {
+            background-color: var(--gris-claro);
+            position: relative;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-card {
+            background-color: var(--blanco);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--azul-claro);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            border: 3px solid var(--azul-claro);
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .client-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: var(--transicion);
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Sección Contacto */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-form {
+            background-color: var(--gris-claro);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--azul-oscuro);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--gris-medio);
+            border-radius: 8px;
+            font-family: var(--fuente-principal);
+            transition: var(--transicion);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--azul-claro);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: var(--gris-claro);
+            border-radius: 12px;
+            transition: var(--transicion);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--azul-claro);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--azul-gradiente);
+            color: var(--blanco);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--azul-claro);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--azul-claro);
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            color: var(--blanco);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--blanco);
+            text-decoration: none;
+            transition: var(--transicion);
+        }
+
+        .social-links a:hover {
+            background-color: var(--azul-claro);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            color: var(--blanco);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: var(--blanco);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links ul li a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                padding-right: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 80%;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--blanco);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .header-container {
+                padding: 15px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .language-selector {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .client-logos {
+                gap: 20px;
+            }
+
+            .client-logo {
+                height: 40px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo"><i class="fas fa-calculator"></i>FA &<span>Asociados </span></a>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-selector">
+                <button class="lang-btn active">ES</button>
+                <button class="lang-btn">EN</button>
+                <button class="lang-btn">IT</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio">
+        <div class="container hero-content">
+            <h1>Tu tranquilidad financiera en manos expertas</h1>
+            <p>En Contabilidad Exacta ofrecemos servicios contables y financieros de alta calidad para empresas y particulares. Confíe en nuestro equipo de profesionales para optimizar sus finanzas.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn">Solicitar asesoría</a>
+                <a href="#servicios" class="btn btn-outline">Nuestros servicios</a>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-text">Años de experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Clientes satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-text">Soporte personalizado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Contabilidad General</h3>
+                    <p>Gestión completa de su contabilidad, incluyendo registro de operaciones, conciliaciones bancarias y elaboración de balances.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Declaración de Impuestos</h3>
+                    <p>Preparación y presentación de declaraciones de impuestos, asegurando el cumplimiento de todas las obligaciones fiscales.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Auditorías Financieras</h3>
+                    <p>Revisión exhaustiva de estados financieros para garantizar su exactitud y cumplimiento con las normativas aplicables.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Asesoría Fiscal y Laboral</h3>
+                    <p>Asesoramiento especializado en materia fiscal y laboral para optimizar su situación y minimizar riesgos.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Planificación Financiera</h3>
+                    <p>Desarrollo de estrategias financieras personalizadas para alcanzar sus objetivos a corto, medio y largo plazo.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Consultoría Empresarial</h3>
+                    <p>Asesoramiento estratégico para mejorar la eficiencia operativa y la rentabilidad de su negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Nuestra Historia</h3>
+                    <p>Contabilidad Exacta fue fundada en 2005 con el objetivo de ofrecer servicios contables de alta calidad a pequeñas y medianas empresas. A lo largo de los años, hemos crecido hasta convertirnos en un referente en el sector, gracias a nuestro compromiso con la excelencia y la satisfacción del cliente.</p>
+                    
+                    <h3>Misión</h3>
+                    <p>Proporcionar soluciones contables y financieras integrales que permitan a nuestros clientes tomar decisiones informadas, optimizar sus recursos y cumplir con sus obligaciones fiscales de manera eficiente.</p>
+                    
+                    <h3>Visión</h3>
+                    <p>Ser la firma de contabilidad de referencia en nuestra región, reconocida por nuestra integridad, profesionalismo y capacidad para ofrecer soluciones innovadoras adaptadas a las necesidades de cada cliente.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item fade-in">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Confianza</h4>
+                            <p>Construimos relaciones basadas en la transparencia y confidencialidad.</p>
+                        </div>
+                        
+                        <div class="value-item fade-in">
+                            <i class="fas fa-award"></i>
+                            <h4>Excelencia</h4>
+                            <p>Nos esforzamos por ofrecer servicios de la más alta calidad en todo momento.</p>
+                        </div>
+                        
+                        <div class="value-item fade-in">
+                            <i class="fas fa-users"></i>
+                            <h4>Compromiso</h4>
+                            <p>Nos dedicamos plenamente al éxito financiero de nuestros clientes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1551836026-d5c8c1a7c66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipo de Contabilidad Exacta">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Clientes -->
+    <section id="clientes">
+        <div class="container">
+            <h2 class="section-title">Nuestros Clientes</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Contabilidad Exacta ha transformado completamente la gestión financiera de nuestra empresa. Su profesionalismo y atención al detalle son excepcionales. Recomendamos sus servicios sin dudarlo."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho">
+                        <div>
+                            <h4>Roberto Martínez</h4>
+                            <p>Director de Innovatech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Llevamos más de 5 años trabajando con Contabilidad Exacta y no podríamos estar más satisfechos. Su asesoramiento nos ha ayudado a crecer de forma sostenible y a optimizar nuestros recursos financieros."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente satisfecho">
+                        <div>
+                            <h4>María López</h4>
+                            <p>Gerente de Soluciones Globales</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Como autónomo, necesitaba un servicio contable confiable y accesible. Contabilidad Exacta ha superado todas mis expectativas con su atención personalizada y su capacidad para resolver cualquier duda rápidamente."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Cliente satisfecho">
+                        <div>
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Diseñador Freelance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-center" style="margin-top: 50px;">Empresas que confían en nosotros</h3>
+            <div class="client-logos">
+                <img src="https://via.placeholder.com/150x60/1e3a5f/ffffff?text=Empresa+A" alt="Empresa A" class="client-logo">
+                <img src="https://via.placeholder.com/150x60/1e3a5f/ffffff?text=Empresa+B" alt="Empresa B" class="client-logo">
+                <img src="https://via.placeholder.com/150x60/1e3a5f/ffffff?text=Empresa+C" alt="Empresa C" class="client-logo">
+                <img src="https://via.placeholder.com/150x60/1e3a5f/ffffff?text=Empresa+D" alt="Empresa D" class="client-logo">
+                <img src="https://via.placeholder.com/150x60/1e3a5f/ffffff?text=Empresa+E" alt="Empresa E" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            
+            <div class="contact-container">
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Principal 123, Oficina 45<br>Ciudad, CP 28001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+34 912 345 678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Correo electrónico</h3>
+                            <p>info@contabilidadexacta.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de atención</h3>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container fade-in">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.454132178729!2d-3.703790684603953!3d40.41677537936478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287e3a60e8c1%3A0x6d2f1fa0c2ab7c0e!2sPuerta%20del%20Sol%2C%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sus!4v1622549402994!5m2!1ses!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Contabilidad <span>Exacta</span></div>
+                    <p>Tu tranquilidad financiera en manos expertas. Ofrecemos servicios contables y financieros de alta calidad para empresas y particulares.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                        <li><a href="#nosotros"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="#clientes"><i class="fas fa-chevron-right"></i> Clientes</a></li>
+                        <li><a href="#contacto"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contabilidad general</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Declaración de impuestos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Auditorías financieras</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Asesoría fiscal y laboral</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Planificación financiera</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +34 912 345 678</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@contabilidadexacta.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Contabilidad Exacta. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad para el menú móvil
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+        
+        // Funcionalidad para cambiar idioma
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                // Aquí iría la lógica para cambiar el idioma del sitio
+            });
+        });
+        
+        // Funcionalidad para el formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por su mensaje. Nos pondremos en contacto con usted pronto.');
+            this.reset();
+        });
+        
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú móvil si está abierto
+                    if(window.innerWidth <= 768) {
+                        document.getElementById('navbar').classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Efecto de scroll en el header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if(window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animación de elementos al hacer scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if(elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Ejecutar una vez al cargar la página
+        fadeInOnScroll();
+        
+        // Contadores animados para las estadísticas
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let counted = false;
+        
+        const animateStats = function() {
+            if(!counted && document.getElementById('inicio').getBoundingClientRect().top < window.innerHeight - 100) {
+                counted = true;
+                
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.textContent);
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if(current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + (stat.textContent.includes('/') ? '/' : '');
+                    }, 30);
+                });
+            }
+        };
+        
+        window.addEventListener('scroll', animateStats);
+    </script>
+</body>
+</html>
